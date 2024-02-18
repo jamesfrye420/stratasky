@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import { ModeToggle } from "@/components/ui/darkModeToggle";
 import { Inter } from "next/font/google";
 import { SideBar } from "@/components/ui/sidebar";
+import { Separator } from "@/components/ui/separator";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -32,13 +33,14 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <div className="flex w-full border-b border-slate-400 p-5">
+            <div className="flex w-full p-5">
               <SideBar />
               <span className="ml-auto">
                 <ModeToggle />
               </span>
-              {children}
             </div>
+            <Separator />
+            {children}
           </ThemeProvider>
         </body>
       </html>

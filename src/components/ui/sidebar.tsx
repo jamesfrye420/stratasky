@@ -1,17 +1,10 @@
 import * as React from "react";
-import {
-  Cross1Icon,
-  HamburgerMenuIcon,
-  MinusIcon,
-  PlusIcon,
-} from "@radix-ui/react-icons";
+import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
-  SheetClose,
   SheetContent,
-  SheetDescription,
   SheetFooter,
   SheetHeader,
   SheetTitle,
