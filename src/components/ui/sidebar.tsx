@@ -15,7 +15,7 @@ export function SideBar() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline">
+        <Button variant="ghost">
           <HamburgerMenuIcon className="h-[1.2rem] w-[1.2rem]" />
         </Button>
       </SheetTrigger>
