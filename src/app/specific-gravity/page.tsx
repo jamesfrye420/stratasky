@@ -2,9 +2,9 @@
 import { GridDataProvider, useGridData } from "@/components/context/gridData";
 import Grid from "@/components/ui/agGrid";
 import Link from "next/link";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 
-const colDefs = [
+const ColumnDefinations = [
   {
     field: "determination_number",
     headerName: "Determination No.",
@@ -56,7 +56,11 @@ export default function HomePage() {
     };
   }, []);
 
-  const { colDefs, rowData } = useGridData();
+  const { colDefs, rowData, setColDefs, setRowData } = useGridData();
+  useEffect(() => {
+    setColDefs(ColumnDefinations);
+    setRowData(RowData);
+  }, []);
   return (
     <main className="">
       <h1 className="mb-10 text-3xl font-semibold tracking-wide">

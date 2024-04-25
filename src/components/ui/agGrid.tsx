@@ -26,10 +26,7 @@ interface Props {
 }
 const Grid = ({ cols, rowData: rowDataInput, autoSizeStrategy }: Props) => {
   const { colDefs, setColDefs, rowData, setRowData } = useGridData();
-  useEffect(() => {
-    setColDefs(cols);
-    setRowData(rowDataInput || []);
-  }, []);
+
   return (
     <div
       className="ag-theme-quartz" // applying the grid theme
