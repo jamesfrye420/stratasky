@@ -40,7 +40,7 @@ export default function RootLayout({
               </span>
             </div>
             <Separator />
-            {children}
+            <div className="p-10">{children}</div>
           </ThemeProvider>
         </body>
       </html>
