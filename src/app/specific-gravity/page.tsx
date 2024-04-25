@@ -61,16 +61,13 @@ export default function HomePage() {
     setColDefs(ColumnDefinations);
     setRowData(RowData);
   }, []);
+
   return (
     <main className="">
       <h1 className="mb-10 text-3xl font-semibold tracking-wide">
         Specific Gravity
       </h1>
-      <Grid
-        cols={colDefs as any}
-        rowData={RowData}
-        autoSizeStrategy={autoSizeStrategy as any}
-      />
+      <Grid autoSizeStrategy={autoSizeStrategy as any} />
       <p className="mt-10">
         Average specific gravity with respect to test liquid at lab temperature
         (Gl)av: {}

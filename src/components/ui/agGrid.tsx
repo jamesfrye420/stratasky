@@ -17,15 +17,15 @@ import { useGridData } from "../context/gridData";
 export type cols = ColDef<any, any> | ColGroupDef<any>;
 
 interface Props {
-  cols: cols[];
-  rowData?: any[];
   autoSizeStrategy?:
     | SizeColumnsToFitGridStrategy
     | SizeColumnsToFitProvidedWidthStrategy
     | SizeColumnsToContentStrategy;
 }
-const Grid = ({ cols, rowData: rowDataInput, autoSizeStrategy }: Props) => {
+const Grid = ({ autoSizeStrategy }: Props) => {
   const { colDefs, setColDefs, rowData, setRowData } = useGridData();
+
+  console.log(rowData);
 
   return (
     <div
