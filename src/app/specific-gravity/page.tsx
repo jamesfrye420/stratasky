@@ -1,3 +1,5 @@
+"use client";
+import { GridDataProvider, useGridData } from "@/components/context/gridData";
 import Grid from "@/components/ui/agGrid";
 import Link from "next/link";
 import { useMemo } from "react";
@@ -54,6 +56,7 @@ export default function HomePage() {
     };
   }, []);
 
+  const { colDefs, rowData } = useGridData();
   return (
     <main className="">
       <h1 className="mb-10 text-3xl font-semibold tracking-wide">
@@ -64,6 +67,10 @@ export default function HomePage() {
         rowData={RowData}
         autoSizeStrategy={autoSizeStrategy as any}
       />
+      <p className="mt-10">
+        Average specific gravity with respect to test liquid at lab temperature
+        (Gl)av: {}
+      </p>
     </main>
   );
 }

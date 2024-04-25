@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AgGridReact } from "ag-grid-react"; // AG Grid Component
 import "@ag-grid-community/styles/ag-grid.css"; // Mandatory CSS required by the grid
 import "@ag-grid-community/styles/ag-theme-quartz.css";
@@ -8,14 +8,13 @@ import "@ag-grid-community/styles/ag-theme-quartz.css";
 import {
   ColDef,
   ColGroupDef,
-  ValueGetterParams,
-  ModuleRegistry,
   SizeColumnsToFitGridStrategy,
   SizeColumnsToFitProvidedWidthStrategy,
   SizeColumnsToContentStrategy,
 } from "@ag-grid-community/core";
+import { useGridData } from "../context/gridData";
 
-type cols = ColDef<any, any> | ColGroupDef<any>;
+export type cols = ColDef<any, any> | ColGroupDef<any>;
 
 interface Props {
   cols: cols[];
@@ -26,8 +25,11 @@ interface Props {
     | SizeColumnsToContentStrategy;
 }
 const Grid = ({ cols, rowData: rowDataInput, autoSizeStrategy }: Props) => {
-  const [colDefs, setColDefs] = useState<cols[]>(cols);
-  const [rowData, setRowData] = useState<any[]>(rowDataInput || []);
+  const { colDefs, setColDefs, rowData, setRowData } = useGridData();
+  useEffect(() => {
+    setColDefs(cols);
+    setRowData(rowDataInput || []);
+  }, []);
   return (
     <div
       className="ag-theme-quartz" // applying the grid theme
