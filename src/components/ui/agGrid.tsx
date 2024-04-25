@@ -25,8 +25,6 @@ interface Props {
 const Grid = ({ autoSizeStrategy }: Props) => {
   const { colDefs, setColDefs, rowData, setRowData } = useGridData();
 
-  console.log(rowData);
-
   return (
     <div
       className="ag-theme-quartz" // applying the grid theme
