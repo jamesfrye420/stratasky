@@ -11,6 +11,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Separator } from "./separator";
+import Link from "next/link";
 
 export function SideBar() {
   return (
@@ -25,6 +26,10 @@ export function SideBar() {
           <SheetTitle>Experiments</SheetTitle>
           <Separator />
         </SheetHeader>
+
+        <div>
+          <Link href={"/specific-gravity"}>Specific Gravity</Link>
+        </div>
 
         <SheetFooter></SheetFooter>
       </SheetContent>
