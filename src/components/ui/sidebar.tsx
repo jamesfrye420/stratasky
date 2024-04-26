@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 
@@ -14,8 +16,9 @@ import { Separator } from "./separator";
 import Link from "next/link";
 
 export function SideBar() {
+  const [sheetOpen, setSheetOpen] = React.useState(false);
   return (
-    <Sheet>
+    <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
       <SheetTrigger asChild>
         <Button variant="ghost">
           <HamburgerMenuIcon className="h-[1.2rem] w-[1.2rem]" />
@@ -27,8 +30,14 @@ export function SideBar() {
           <Separator />
         </SheetHeader>
 
-        <div className="mt-10">
-          <Link href={"/specific-gravity"}>Specific Gravity</Link>
+        <div className="mt-10 flex w-full flex-col gap-5">
+          <Link href={"/specific-gravity"} onClick={() => setSheetOpen(false)}>
+            Specific Gravity
+          </Link>
+
+          <Link href={"/vane-shear"} onClick={() => setSheetOpen(false)}>
+            Vane Shear Test
+          </Link>
         </div>
 
         <SheetFooter></SheetFooter>

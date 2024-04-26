@@ -29,7 +29,7 @@ interface Props {
     | SizeColumnsToFitProvidedWidthStrategy
     | SizeColumnsToContentStrategy;
   setGridReady?: () => void;
-  setDummy?: any;
+  setDummy: any;
 }
 const Grid = forwardRef(
   ({ autoSizeStrategy, setGridReady = () => {}, setDummy }: Props, ref) => {
