@@ -11,6 +11,15 @@ const config = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/specific-gravity",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default config;

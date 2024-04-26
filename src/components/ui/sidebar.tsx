@@ -27,7 +27,7 @@ export function SideBar() {
           <Separator />
         </SheetHeader>
 
-        <div>
+        <div className="mt-10">
           <Link href={"/specific-gravity"}>Specific Gravity</Link>
         </div>
 
