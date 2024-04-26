@@ -10,6 +10,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { Separator } from "./separator";
 
 export function SideBar() {
   return (
@@ -22,6 +23,7 @@ export function SideBar() {
       <SheetContent side={"left"}>
         <SheetHeader>
           <SheetTitle>Experiments</SheetTitle>
+          <Separator />
         </SheetHeader>
 
         <SheetFooter></SheetFooter>
